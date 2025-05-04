@@ -1,20 +1,24 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import NotfoundPage from "./components/NotfoundPage";
+import Footer from "./components/Footer";
+import MainBody from "./components/MainBody";
 
 function App() {
   return (
-    <>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium minima
-      qui nesciunt veritatis excepturi, velit commodi ea eaque repellendus
-      doloribus rerum rem facilis quisquam pariatur iusto. Ipsa aliquid iusto,
-      nihil harum in amet vero quia reiciendis quaerat, deleniti earum autem
-      sapiente reprehenderit iste, velit commodi modi magnam quis porro ea ut
-      tenetur fugit beatae quisquam. Repellat ut ad architecto eaque dolorum
-      ipsa animi totam vero dolorem incidunt veniam, quibusdam vel omnis
-      necessitatibus sint quos nam accusamus magnam voluptatibus eveniet
-      aspernatur minima. Possimus consequatur accusantium quos dolores, enim
-      repudiandae dolore ipsam eius. Quo id illo obcaecati voluptate asperiores
-      ipsa omnis nulla!
-    </>
+    <main>
+      <Header />
+      <Routes>
+        <Route path='/' element={<MainBody />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='*' element={<NotfoundPage />} />
+      </Routes>
+      <Footer />
+    </main>
   );
 }
 
